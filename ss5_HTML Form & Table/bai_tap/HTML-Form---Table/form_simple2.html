@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <title>Đăng ký học viên</title>
+    <style>
+        form {
+            width: 300px;
+            margin: 20px;
+            background-color: #fffda9 ;
+        }
+        .address {
+            width: 200px;
+            height: 50px;
+        }
+        h1 {
+            text-align: left;
+            color: #0433ff;
+            background-color: #d4fdd6;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <h1>Đăng ký học viên</h1>
+        <label>Họ và tên</label>
+        <input type="text" id="name" placeholder="Nhập tên học viên"><br>
+        <label >Ngày sinh</label>
+        <input type="text" id="birthday" placeholder="Nhập ngày sinh học viên"><br>
+        <label>Giới tính</label>
+        <laber>Nam</laber>
+        <input type="radio" name="gender">
+        <laber>Nữ</laber>
+        <input type="radio" name="gender"><br>
+        <label>Nhập địa chỉ</label>
+        <input type="text" class="address" placeholder="Nhập địa chỉ"><br>
+        <label>Lớp</label>
+        <select>
+            <option value="0">Chọn lớp</option>
+            <option value="1">Lớp 1</option>
+            <option value="2">Lớp 2</option>
+            <option value="3">Lớp 3</option>
+            <option value="4">Lớp 4</option>
+            <option value="5">Lớp 5</option>
+        </select> <br>
+        <label>Email</label>
+        <input type="email" name="email" placeholder="Nhập email"><br>
+        <label>Số điện thoại</label>
+        <input type="tel" name="phone" placeholder="Nhập số điện thoại"><br>    
+        <button type="submit">Đăng ký</button>
+        <button type="reset">Nhập lại</button>
+    </form>
+    
+
+</body>

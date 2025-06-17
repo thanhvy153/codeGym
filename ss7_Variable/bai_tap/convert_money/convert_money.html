@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Ứng dụng chuyển đổi tiền tệ</title>
+    </head>
+    <body>
+        <h1>Chuyển đổi tiền tệ</h1>
+        <table>
+            <tr>
+                <th>Amount</th>
+                <th>From</th>
+                <th>To Currency</th>
+                <th></th>
+            </tr>
+            <tr>
+                <td><input name="Amount" id="Amount"></td>
+                <td>
+                    <select id="fromCurrency">
+                        <option value="">Select</option>
+                        <option value="USD">USD</option>
+                        <option value="VND">VND</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="toCurrency">
+                        <option value="">Select</option>
+                        <option value="USD">USD</option>
+                        <option value="VND">VND</option>
+                    </select>
+                </td>
+                <td><button onclick="convertCurrency()" type="submit">Convert</button></td>
+            </tr>
+        </table>
+        <p id="result"></p>
+    </body>
+    <script>
+        function convertCurrency() {
+            let amount = document.getElementById("Amount").value;
+            let fromCurrency = document.getElementById("fromCurrency").value;
+            let toCurrency = document.getElementById("toCurrency").value;
+            let result = 0;
+            if (fromCurrency == "USD" && toCurrency =="VND") {
+                result = amount * 26000;
+                document.getElementById("result").innerHTML = "<b>Kết quả: </b>" +result + " " + toCurrency;
+            }
+            
+            else if (fromCurrency == "VND" && toCurrency =="USD") {
+                result = amount / 26000;
+                document.getElementById("result").innerHTML = "<b>Kết quả: </b>" +result + " " + toCurrency;
+            }
+            else {
+                alert("Vui lòng chọn đúng quy tắc chuyển đổi tiền tệ.")
+            }
+                
+        }
+    </script>
+</html>

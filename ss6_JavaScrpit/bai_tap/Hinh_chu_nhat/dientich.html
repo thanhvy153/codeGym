@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tính diện tích và chu vi hình chữ nhật</title>
+        <style>
+            input {
+                margin: 5px 0;
+                padding: 10px;
+                font-size: 16px;
+                width: 200px;
+            }
+            #chuvi, #dientich {
+                font-size: 20px;
+                color: orangered;
+                margin-top: 10px;
+            }
+            .hinhchunhat {
+                font-family: Arial, sans-serif;
+                background-color: #f0f0f0;
+            }
+            button {
+                padding: 10px 20px;
+                font-size: 16px;
+                background-color: orangered;
+                color: white;
+                border: 1px solid black;
+                cursor: pointer;
+            }
+            /* form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                margin-top: 50px;
+            } */
+             h1, h2 {
+                color: orangered;
+             }
+        </style>
+    </head>
+    <body>
+        <div class="hinhchunhat">
+            <h1>Tính diện tích và chu vi hình chữ nhật</h1>
+            <h2>Nhập thông tin: </h2>
+            <input autofocus type="number" id="length" placeholder="Nhập chiều dài (m)" /><br>
+            <input autofocus type="number" id="width" placeholder="Nhập chiều rộng (m)" /><br>
+            <button onclick="hinhchunhat()"><b>Kết quả </b></button><br>
+            <p id="dientich"></p><br>
+            <p id="chuvi"></p>
+        </div>
+    </body>
+    <script>
+        function hinhchunhat() {
+            let length = document.getElementById("length").value;
+            let width = document.getElementById("width").value;
+            let chuvi = 2 * (+length + +width);
+            let dientich = length * width;
+            document.getElementById("chuvi").innerHTML = "<b>Chu vi: </b>" + chuvi + "m";
+            document.getElementById("dientich").innerHTML = "<b>Diện tích:</b> " + dientich + "m2";
+        }
+    </script>
+</html>
