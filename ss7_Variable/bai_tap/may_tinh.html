@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Simple Calculate</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <input id="number1" name="number1" placeholder="Number 1" autofocus>
+                    <input id="number2" name="number2" placeholder="Number 2" autofocus>
+                </td>
+            </tr>
+            <tr>
+               <td>
+                    <button onclick="plus()" id="plus" name="plus" value="+">Add(+)</button>
+                    <button onclick="substract()" id="substract" name="substract" value="-">Substract(-)</button>
+                    <button onclick="multiplate()"  id="multiplate" name="multiplate" value="*">Multiplate(*)</button>
+                    <button onclick="devide()" id="devide" name="devide" value="/">Devide(/)</button>
+                </td>
+            </tr>
+        </table>
+        <p id="result"></p>
+    </body>
+    <script>
+        function plus() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let result = +number1 + +number2;
+            document.getElementById("result").innerHTML = "<b>Kết quả: </b>" + result;
+        }
+
+        function substract() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let result = +number1 - +number2;
+            document.getElementById("result").innerHTML = "<b>Kết quả: </b>" + result;
+        }
+
+        function multiplate() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let result = +number1 * +number2;
+            document.getElementById("result").innerHTML = "<b>Kết quả: </b>" + result;        
+        }
+        
+        function devide() {
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
+            let result = +number1 / +number2;
+            document.getElementById("result").innerHTML = "<b>Kết quả: </b>" + result;  
+        }
+    </script>
+</html>
