@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Máy tính đơn giản</title>
+    </head>
+    <body>
+        <h1>Máy tính đơn giản</h1>
+        <table>
+            <tr>
+                <td colspan="4"><input id="window" type="text"></td>
+            </tr>
+            <tr>
+                <td><input type="button" onclick="getValue(this.value)" value="1"></td>
+                <td><input type="button" onclick="getValue(this.value)" value="2"></td>
+                <td><input type="button" onclick="getValue(this.value)" value="3"></td>
+                <td><input type="button" onclick="getValue(this.value)" value="+"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" onclick="getValue(this.value)" value="4"></td>
+                <td><input type="button" value="5"onclick="getValue(this.value)"></td>
+                <td><input type="button" value="6" onclick="getValue(this.value)"></td>
+                <td><input type="button" value="-" onclick="getValue(this.value)"></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="7" onclick="getValue(this.value)"></td>
+                <td><input type="button" value="8" onclick="getValue(this.value)"></td>
+                <td><input type="button" value="9" onclick="getValue(this.value)"></td>
+                <td><input type="button" value="*" onclick="getValue(this.value)" ></td>
+            </tr>
+
+            <tr>
+                <td><input type="button" value="AC" onclick="clearWindow()"></td>
+                <td><input type="button" value="0" onclick="getValue(this.value)"></td>
+                <td><input type="button" value="=" onclick="result()"></td>
+                <td><input type="button" value="/" onclick="getValue(this.value)"></td>
+            </tr>
+        </table>
+        <script>
+            function getValue(value) {
+                document.getElementById("window").value += value;
+            }
+
+            function result(){
+                let string = document.getElementById("window").value;
+                let result = eval(string);
+                document.getElementById("window").value = result;
+            }
+
+            function clearWindow() {
+                document.getElementById("window").value = "";
+            }
+        </script>
+    </body>
+</html>

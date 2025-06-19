@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tính số ngày trong tháng</title>
+    </head>
+    <body>
+        <h1>Tính số ngày trong một tháng</h1>
+        <table>
+            <tr><input id="month" name="month" placeholder="Nhập tháng " autofocus></tr>
+            <tr><button onclick="checkDaysInMonth()" type="submit">Check</button></tr>
+        </table>
+        <p id="result"></p>
+        <script>
+            function checkDaysInMonth() {
+                let month = +document.getElementById("month").value;
+                let days;
+                switch (month) {
+                    case 1:
+                    case 3:
+                    case 5:
+                    case 7:
+                    case 8:
+                    case 10:
+                    case 12:
+                        days = 31;
+                        document.getElementById("result").innerHTML = `Tháng này có ${days} ngày`;
+                        break;
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        days = 30;
+                        document.getElementById("result").innerHTML = `Tháng này có ${days} ngày`;
+                        break;
+                    case 2:
+                        days = 28; 
+                        document.getElementById("result").innerHTML = `Tháng này có ${days} hoặc ${days + 1}  ngày`;
+                        break;
+                    default:
+                        
+
+                }
+            }
+        </script>
+    </body>
+</html>    
