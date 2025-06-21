@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tính hoa hồng dựa vào doanh số</title>
+    </head>
+    <body>
+        <script>
+            let sales = +prompt("Nhập số lượng sản phẩm bạn đã bán được: ");
+            let rateCommission = 0;
+            const sellPrice = 10; // Giá bán mỗi sản phẩm
+            if (sales >= 1000){
+                rateCommission = 0.35; 
+            }
+            else if (sales >= 500) {
+                rateCommission = 0.25;
+            }
+            else if (sales >= 100) {
+                rateCommission = 0.15;
+            }
+            else if (sales >= 10) {
+                rateCommission = 0.1;
+               
+            }
+            else {
+                alert("Bạn không đủ điều kiện để nhận được hoa hồng")
+            }
+            let comisstion = sales * rateCommission * sellPrice;
+            alert(`Hoa hồng của bạn là: ${comisstion} $ `)
+        </script>
+    </body>
+</html>    

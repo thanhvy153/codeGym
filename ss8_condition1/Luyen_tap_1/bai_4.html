@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Nhập số nguyên</title>
+    </head>
+    <body>
+        <script>
+            let number1 = + prompt("Nhập số thứ nhất: ");
+            let number2 = + prompt("Nhập số thứ 2: ");
+            let number3 = + prompt("Nhập số thứ 3: ");
+            if (number1 > number2 && number1 > number3){
+                alert(`Số lớn nhất là: ${number1}`)
+            }
+            else if (number2 > number1 && number2 > number3){
+                alert(`Số lớn nhất là: ${number2}`)
+            }
+            else if (number3 > number1 && number3 > number2) {
+                alert(`Số lớn nhất là: ${number3}`)
+            }
+            else {
+                alert("Có ít nhất 2 số đã bằng nhau")
+            }
+        </script>
+    </body>
+</html>    

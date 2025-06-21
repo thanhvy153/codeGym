@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Tính tiền cước điện thoại</title>
+    </head>
+    <body>
+        <script>
+            const phiCoDinh = 50000; // Phí cố định hằng tháng là 50k
+            let phiGioHanhChinh = +prompt("Nhập số phút gọi hành chính: "); // Ban ngày
+            let ngoaiGio = +prompt("Nhập số phút gọi ngoài hành chính: "); // Ban đêm
+            const giaHanhChinh = 1200 // 1200 đồng/phút
+            const giaNgoaiGio = 600 // 600 đồng/phút
+            let tongTien = phiCoDinh + (phiGioHanhChinh * giaHanhChinh) + (ngoaiGio * giaNgoaiGio);
+            if (tongTien > 300000) {
+                tongTien = tongTien - (tongTien * 0.1) // Giảm 10% nếu tổng tiền gọi lớn hơn 300k
+            }
+            else if (tongTien > 200000) {
+                tongTien = tongTien - (tongTien * 0.05) // Giảm 5% nếu tổng tiền gọi lớn hơn 200k
+            }
+            alert(`Tổng tiền cước điện thoại của bạn là: ${tongTien} đồng`);
+        </script>
+    </body>
+</html>    
