@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiểm tra xem 3 số thực (a,b,c) nhập vào có phải là cạnh của một tam giác</title>
+</head>
+
+<body>
+    <script>
+        let canh_a = +prompt("Nhập cạnh a: ");
+        let canh_b = +prompt("Nhập cạnh b: ");
+        let canh_c = +prompt("Nhập cạnh c: ");
+        if (canh_a > 0 && canh_b > 0 && canh_c > 0) {
+            if (canh_a + canh_b > canh_c && canh_a + canh_c > canh_b && canh_b + canh_c > canh_a) {
+                alert("3 cạnh a, b, c là cạnh của một tam giác");
+            } else {
+                alert("3 cạnh a, b, c không phải là cạnh của một tam giác");
+            }
+        } else {
+            alert("Các cạnh của tam giác phải là số dương nhé")
+        }
+    </script>
+</body>
+
+</html>

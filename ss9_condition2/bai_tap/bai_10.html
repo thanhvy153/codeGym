@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chương trình tính giá điện</title>
+</head>
+
+<body>
+    <script>
+        let soDien = +prompt("Nhập số điện tiêu thụ (kWh): ");
+        if (soDien > 0 && soDien <= 50) {
+            let tienDien = soDien * 1500;
+            alert(`Số tiền điện phải trả là: ${tienDien} đồng`);
+        } else if (soDien > 50 && soDien <= 100) {
+            let tienDien = 50 * 1500 + (soDien - 50) * 2000;
+            alert(`Số tiền điện phải trả là: ${tienDien} đồng`);
+        } else {
+            let tienDien = 50 * 1500 + 50 * 2000 + (soDien - 100) * 2500;
+            alert(`Số tiền điện phải trả là: ${tienDien} đồng`);
+        }
+
+    </script>
+</body>
+
+</html>

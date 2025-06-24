@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chương trình tính thuế thu nhập cá nhân</title>
+</head>
+
+<body>
+    <script>
+        let luong = +prompt("Nhập lương tháng: ");
+        if (luong <= 5000000) {
+            alert("Không cần phải nộp thuế thu nhập cá nhâ.")
+        } else if (luong <= 10000000) {
+            let thue = (luong - 5000000) * 0.05;
+            alert(`Số thuế thu nhập cá nhân phải nộp là: ${thue} đồng`);
+        } else {
+            let thue = (luong - 10000000) * 0.1 + (5000000 * 0.05);
+            alert(`Số thuế thu nhập cá nhân phải nộp là: ${thue} đồng`);
+        }
+    </script>
+</body>
+
+</html>

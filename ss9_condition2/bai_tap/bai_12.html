@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chương trình tính lãi ngân hàng (lãi mẹ đẻ lãi con) khi biết số tiền ban đầu, số tháng cho vay và lãi xuất
+        hàng tháng.</title>
+</head>
+
+<body>
+    <script>
+        let soTien = +prompt("Nhập số tiền gửi (VNĐ): ");
+        let soThang = +prompt("Nhập số tháng gửi: ");
+        let laiSuat = +prompt("Nhập lãi suất hàng tháng (%): ");
+        if (soTien > 0 && laiSuat > 0 && soThang > 0) {
+            let soTienCuoi = soTien * (1 + laiSuat / 100) ** soThang;
+            let lai = soTienCuoi - soTien;
+            alert(`Số tiền cuối cùng sau ${soThang} tháng là: ${soTienCuoi} VNĐ lãi được: ${lai} VNĐ`);
+        } else {
+            alert("Số tiền, số tháng và lãi suất đều phải là số dương.");
+        }
+    </script>
+</body>
+
+</html>
