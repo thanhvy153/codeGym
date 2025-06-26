@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>In dãy Fibonaci</title>
+</head>
+
+<body>
+    <script>
+        let soLuong = +prompt("Nhập số lượng số trong dãy Fibonacci bạn muốn hiển thị: ");
+        let number1 = 0;
+        let number2 = 1;
+        let nextNumber;
+        let count = 0;
+        while (count < soLuong) {
+            document.write(number1 + "<br>");
+            nextNumber = number1 + number2;
+            number1 = number2;
+            number2 = nextNumber;
+            count++;
+        }
+    </script>
+</body>
+
+</html>

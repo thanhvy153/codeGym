@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tính giai thừa của một số nguyên dương</title>
+</head>
+
+<body>
+    <script>
+        let number = +prompt("Nhập số nguyên dương để tính: ")
+        let count = 0;
+        for (let i = number; i > 1; i--) {
+            number *= i - 1;
+        }
+        alert("Giai thừa của số bạn nhập là: " + number);
+    </script>
+</body>
+
+</html>
