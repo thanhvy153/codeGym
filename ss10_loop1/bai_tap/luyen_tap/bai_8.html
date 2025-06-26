@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hãy thử đoán xem!</title>
+</head>
+
+<body>
+    <button onclick="start_game()">Bắt đầu trò chơi đoán số</button>
+    <script>
+        function start_game() {
+            let khoanMuonDoan = +prompt("Số bạn muốn đoán lớn nhất là bao nhiêu?");
+            let randomNum = Math.floor(Math.random() * khoanMuonDoan + 1);
+            console.log(randomNum);
+            let soLanDoan = 3;
+            while (soLanDoan > 0) {
+                let soDoan = +prompt("Hãy đoán một số từ 1 đến " + khoanMuonDoan + "\n"
+                    + "Bạn còn " + soLanDoan + " lần đoán nữa");
+                if (soDoan == randomNum) {
+                    alert("Chúc mừng bạn đã đoán đúng!");
+                    alert("Kết quả số cần đoán là: " + randomNum);
+                    break;
+
+                } else if (soDoan < randomNum) {
+                    alert("Số bạn đoán nhỏ hơn số cần đoán. Hãy thử lại!");
+
+                } else {
+                    alert("Số bạn đoán lớn hơn số cần đoán. Hãy thử lại!");
+                }
+
+                soLanDoan--;
+                if (soLanDoan == 0) {
+                    alert("Bạn đã hết lượt đoán. Số cần đoán là: " + randomNum);
+                }
+            }
+        }
+
+
+    </script>
+</body>
+
+</html>
