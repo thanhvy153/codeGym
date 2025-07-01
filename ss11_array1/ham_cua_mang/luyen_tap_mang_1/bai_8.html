@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Chương trình sắp xếp mảng theo thứ tự giảm dần và hiển thị mảng đã được sắp xếp.</title>
+</head>
+
+<body>
+    <script>
+        let number = 10;
+        alert("Nhập 10 số nguyên bất kỳ để kiểm tra");
+        let inputNumber = +prompt("Nhập số nguyên V: ");
+        let myNumber = [];
+        while (number > 0) {
+            let input = +prompt("Nhập số thứ " + (myNumber.length + 1) + ": ");
+            myNumber.push(input);
+            number--;
+        }
+        for (let i = 0; i < myNumber.length - 1; i++) {
+            for (let j = 0; j < myNumber.length - i - 1; j++) {
+                if (myNumber[j] < myNumber[j +1 ]) {
+                    let temp = myNumber[j];
+                    myNumber[j] = myNumber[j + 1];
+                    myNumber[j + 1] = temp;
+                }
+            }
+        }
+        document.write(`Mảng đã được sắp xếp theo thứ tự giảm dần: ${myNumber}`);
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình khởi tạo hoặc nhập vào một mảng số nguyên gồm 10 phần tử. Nhập hoặc tạo một phần tử số
+        nguyên V. Chương trình kiểm tra xem V có thuộc mảng đã cho không.</title>
+</head>
+
+<body>
+    <script>
+        let number = 10;
+        alert("Nhập 10 số nguyên bất kỳ để kiểm tra");
+        let inputNumber = +prompt("Nhập số nguyên V: ");
+        let myNumber = [];
+        while (number > 0) {
+            let input = +prompt("Nhập số thứ " + (myNumber.length + 1) + ": ");
+            myNumber.push(input);
+            number--;
+        }
+        let isFound = false;
+        let index = -1;
+        for (let i = 0; i < myNumber.length; i++) {
+            if (myNumber[i] == inputNumber) {
+                isFound = true;
+                index = i;
+                break;
+            }
+        }
+        if (isFound) {
+            for (i = index; i < myNumber.length - 1; i++) {
+                myNumber[i] = myNumber[i + 1];
+            }
+            myNumber[myNumber.length - 1] = 0;
+            document.write(`Số nguyên ${inputNumber} có trong mảng và đã bị xóa. Mảng sau khi xóa là: ${myNumber}`);
+        } else {
+            document.write(`Số nguyên ${inputNumber} không có trong mảng.`);
+        }
+    </script>
+</body>
+
+</html>

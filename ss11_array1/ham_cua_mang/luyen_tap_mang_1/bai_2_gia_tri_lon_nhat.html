@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình nối tất cả các phần tử trong một mảng chuỗi lại thành một chuỗi duy nhất.</title>
+</head>
+
+<body>
+    <script>
+        let number = 10;
+        alert("Nhập 10 số nguyen bất kỳ để kiểm tra");
+        let myNumber = [];
+        while (number > 0) {
+            let input = + prompt("Nhập số thứ " + (myNumber.length + 1) + ": ");
+            myNumber.push(input);
+            number--;
+        }
+        let numberMax = 0;
+        let indexMax = 0;
+        for (let i = 0; i < myNumber.length; i++) {
+            if (myNumber[i] > numberMax) {
+                numberMax = myNumber[i];
+                indexMax = i;
+            }
+        }
+        document.write(`Số lớn nhất trong mảng là:   ${numberMax}  
+         tại vị trí thứ ${indexMax + 1}`); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình khởi tạo hoặc nhập vào hai mảng số nguyên gồm 10 phần tử (gọi là mảng a và b).</title>
+</head>
+
+<body>
+    <script>
+        let number_a = 10;
+        let number_b = 10;
+        alert("Bắt đầu nhập giá trị 2 mảng: ");
+        let mang_a = [];
+        let mang_b = [];
+        let mang_c = [];
+        alert("Nhập 10 số nguyên cho mảng a");
+        while (number_a > 0) {
+            let input = +prompt("Nhập số thứ " + (mang_a.length + 1) + ": ");
+            mang_a.push(input);
+            number_a--;
+        }
+        alert("Nhập 10 số nguyên cho mảng b");
+        while (number_b > 0) {
+            let input = +prompt("Nhập số thứ " + (mang_b.length + 1) + ": ");
+            mang_b.push(input);
+            number_b--;
+        }
+
+        for (let i = 0; i < mang_a.length; i++) {
+            mang_c.push(mang_a[i]);
+        }
+        for (let i = 0; i < mang_b.length; i++) {
+            mang_c.push(mang_b[i]);
+        }
+
+        document.write(`Mảng C: ${mang_c} <br>`);
+    </script>
+</body>
+
+</html>

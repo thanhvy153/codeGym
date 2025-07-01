@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình khởi tạo một mảng số nguyên. Hiển thị giá trị lớn nhất trong mảng đó. In ra giá trị trung
+        bình của các phần tử trong mảng.</title>
+</head>
+
+<body>
+    <script>
+        let number = 10;
+        alert("Nhập 10 số nguyen bất kỳ để kiểm tra");
+        let myNumber = [];
+        while (number > 0) {
+            let input = + prompt("Nhập số thứ " + (myNumber.length + 1) + ": ");
+            myNumber.push(input);
+            number--;
+        }
+        let numberMax = myNumber[0];
+        let total = 0;
+        let indexMax = 0;
+        for (let i = 0; i < myNumber.length; i++) {
+            if (myNumber[i] > numberMax) {
+                numberMax = myNumber[i];
+            }
+            total += myNumber[i];
+        }
+        total = total / myNumber.length;
+        document.write(`Số lớn nhất trong mảng là: ${numberMax}  
+         và giá trị trung bình của 10 số ${total}`); 
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình nối tất cả các phần tử trong một mảng chuỗi lại thành một chuỗi duy nhất.</title>
+</head>
+
+<body>
+    <script>
+        let number = + prompt("Nhập số lượng số muốn so sánh: ");
+        let myNumber = [];
+        while (number > 0) {
+            let input = + prompt("Nhập số thứ " + (myNumber.length + 1) + ": ");
+            myNumber.push(input);
+            number--;
+        }
+        let countNumber = 0;
+        for (let i = 0; i < myNumber.length; i++) {
+            if (myNumber[i] >= 10) {
+                countNumber++;
+            }
+        }
+        document.write("Số lượng số lớn hơn hoặc bằng 10 là: " + countNumber);
+    </script>
+</body>
+
+</html>

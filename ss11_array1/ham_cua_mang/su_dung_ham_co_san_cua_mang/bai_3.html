@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chuyển đổi chữ thường sang chữ hoa và ngược lại</title>
+</head>
+
+<body>
+    <script>
+        let input = prompt("Nhập một chuỗi bất kỳ: ");
+        let result = "";
+        for (let i = 0; i < input.length; i++) {
+            let char = input[i];
+            if (char === char.toUpperCase()) {
+                result += char.toLowerCase();
+            } else {
+                result += char.toUpperCase();
+            }
+        }
+        document.write("Chuỗi sau khi chuyển đổi là: " + result);
+    </script>
+</body>
+
+</html>
