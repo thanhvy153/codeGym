@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình nhập vào 2 chuỗi, kiểm tra xem hai chuỗi có giống nhau không.</title>
+</head>
+
+<body>
+    <script>
+        let string_a = prompt("Nhập một chuỗi a bất kỳ: ");
+        let string_b = prompt("Nhập một chuỗi b bất kỳ: ");
+        let sameString = true;
+        if (string_a.length != string_b.length) {
+            sameString = false;
+        } else {
+            for (let i = 0; i < string_a.length; i++) {
+                if (string_a[i] !== string_b[i]) {
+                    sameString = false;
+                    break;
+                }
+            }
+        }
+        if (sameString) {
+            document.write("Hai chuỗi giống nhau");
+        } else {
+            document.write("Hai chuỗi khác nhau");
+        }
+    </script>
+</body>
+
+</html>

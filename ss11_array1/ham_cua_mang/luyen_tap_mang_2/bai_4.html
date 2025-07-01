@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Viết chương trình đếm số từ trong một chuỗi.</title>
+</head>
+
+<body>
+    <script>
+        let arrayTu = "qwer tyui opas dfghj klzxcv bnm";
+        let array = ['K', 'S', 'c', '2', '6', '1'];
+        let count = 0;
+        for (let i = 0; i < array.length; i++) {
+            if (arrayTu.includes(array[i].toLowerCase())) {
+                count++;
+            }
+        }
+        if (count === 0) {
+            document.write("Không có từ nào trong chuỗi");
+        } else {
+            document.write("Có " + count + " từ trong chuỗi");
+        }
+    </script>
+</body>
+
+</html>
