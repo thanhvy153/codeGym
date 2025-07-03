@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tạo hàm nhận vào một đối số dạng số, tăng giá trị của đối số lên 1 và trả về giá trị sau khi tăng. Gọi hàm từ trong phần <body> của trang web và hiển thị kết quả lên màn hình.</title>
+</head>
+
+<body>
+    <button onclick="countNumber()">Count</button>
+    <h1 id="count"></h1>
+    <script>
+        let number = 0; // Khởi tạo biến number với giá trị ban đầu là 0
+
+        function increase(num) {
+            return num + 1;
+        }
+        
+        function countNumber(){
+            number = increase(number); // Gọi hàm increase để tăng giá trị của number
+            document.getElementById("count").innerText = number; // Hiển thị giá trị
+        }
+    </script>
+</body>
+
+</html>

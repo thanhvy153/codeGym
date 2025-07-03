@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chuyển đổi giữa feet và meters</title>
+</head>
+
+<body>
+    <script>
+        let meters = +prompt("Nhập số mét: ");
+        let feet = +prompt("Nhập số feet: ");
+
+        function convertToFeet(meters) {
+            return 3.279 * meters ;
+        }
+        function convertToMeters(feet) {
+            return 0.305 * feet;
+        }
+        let resultConvertToFeet = convertToFeet(meters);
+        let resultConvertToMeters = convertToMeters(feet);
+        document.write(`${meters} mét bằng ${resultConvertToFeet} feet.<br>`);
+        document.write(`${feet} feet bằng ${resultConvertToMeters} mét.`);
+    </script>
+</body>
+
+</html>
