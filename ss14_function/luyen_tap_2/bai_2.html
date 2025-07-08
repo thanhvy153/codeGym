@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tính diện tích và chu vi hình tròn.</title>
+</head>
+
+<body>
+    <script>
+        let number = prompt("Nhập bán kính: ");
+        const pi = 3.14;
+        alert("Kết quả: " + caculate(number));
+        function caculate(number) {
+            let chuVi = 2 * pi * number;
+            let dienTich = pi * number * number;
+            return `Diện tích hình tròn là: ${dienTich} và chu vi hình tròn là: ${chuVi}`;
+        }
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tìm số nguyên nhỏ nhất.</title>
+</head>
+
+<body>
+    <script>
+        let array = [];
+        let number = 3;
+        alert("Nhập " + number + " số nguyên bất kỳ.");
+        for (let i = 0; i < number; i++){
+            let input = + prompt("Nhập số ngueyen thứ: " + (i + 1));
+            array.push(input)
+        }
+        alert(`Số nguyên nhỏ nhất trong 3 số là: ${checkMin(array)}`);
+
+        function checkMin(array) {
+            let min = array[0];
+            for (let i = 1; i < array.length; i++) {
+                if (array[i] < min) {
+                    min = array[i];
+                }
+            }
+            return min;
+        }
+    </script>
+</body>
+
+</html>

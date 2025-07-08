@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Kiểm tra ký tự trong mảng.</title>
+</head>
+<body>
+    <script>
+        let array = ['a', 'b', 'c', 'd', 'e', '*', '&', '1', '2', '3', '3', '2', '1'];
+        let character =  prompt("Nhập ký tự cần kiểm tra: ");
+        alert(checkCharacter(array, character));
+        function checkCharacter(array, character) {
+            let count = 0;
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] === character) {
+                    count++;
+                }
+            }
+            if (count > 0){
+                return `Ký tự "${character}" xuất hiện ${count} lần trong mảng.`;
+            }
+            return -1;
+        }
+    </script>
+</body>
+</html>

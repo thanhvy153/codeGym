@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Đảo ngược mảng.</title>
+</head>
+<body>
+    <script>
+        let array = [];
+        let number = 4;
+        alert("Nhập " + number + " số nguyên bất kỳ.");
+        for (let i = 0; i < number; i++){
+            let input = + prompt("Nhập số ngueyen thứ: " + (i + 1));
+            array.push(input)
+        }
+
+        alert(`Mảng đảo ngược là: ${mangDaoNguoc(array)}`);
+        function mangDaoNguoc(array) {
+            let newArray = [];
+            for (let i = array.length  - 1; i >= 0; i--) {
+                newArray.push(array[i]);
+            }
+            return newArray;
+        }
+    </script>
+</body>
+</html>

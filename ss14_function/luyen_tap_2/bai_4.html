@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiểm tra ký tự số.</title>
+</head>
+
+<body>
+    <script>
+        let kiTu = +prompt("Nhập ký tự bất kỳ: ");
+        alert(checkNumber(kiTu));
+        function checkNumber(kiTu) {
+            if (kiTu >= 0 && kiTu <= 9) {
+                return "Đây là ký tự số.";
+            } else {
+                return "Đây không phải là ký tự số.";
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -7,16 +7,22 @@
 
 <body>
     <script>
-            function addNumbers() {
-                firstNum = 4;
-                secondNum = 8;
-                result = firstNum + secondNum;
-                return result;
+        function timKiemSao(tenSao) {
+            for (let i = 0; i < ngoiSao.length; i++) {
+                if (ngoiSao[i].toLowerCase() === tenSao.toLowerCase()) {
+                    return `Sao ${ngoiSao[i]} thuộc chòm sao ${chomSao[i]}`;
+                } 
             }
-            result = 0;
-            alert(result);
-            result = addNumbers();
-            alert(result);     
+            return `Không tìm thấy sao ${tenSao} trong danh sách.`;
+        }
+
+        let ngoiSao = ['Polaris', 'Aldebaran', 'Deneb', 'Vega', 'Altair', 'Dubhe', 'Regulus'];
+        let chomSao = ['Ursa Minor', 'Taurus', 'Cygnus', 'Lyra', 'Aquila',' Ursa Major', 'Leo'];
+        let tenSao = prompt('Nhập tên sao cần tìm:');
+        if (tenSao) {
+            alert(timKiemSao(tenSao));
+        } 
+
     </script>
 </body>
 
