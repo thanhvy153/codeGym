@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Xây dựng lớp mô tả hình chữ nhật.</title>
+</head>
+
+<body>
+    <script>
+        class Rectangle {
+            length;
+            width;
+
+            constructor(chieuDai, chieuRong) {
+                this.length = chieuDai;
+                this.width = chieuRong;
+            }
+
+            dienTich() {
+                return this.length * this.width;
+            }
+            chuVi() {
+                return (this.length + this.width) * 2;
+            }
+            setChieuDaiVaChieuRong(chieuDai, chieuRong) {
+                this.length = chieuDai;
+                this.width = chieuRong;
+            }
+        }
+        
+        let hinhChuNhat1 = new Rectangle(5, 10);
+        // Diện tích hình chữ nhật sau khi set
+        hinhChuNhat1.setChieuDaiVaChieuRong(7, 12);
+        alert(`Diện tích hình chữ nhật là: ${hinhChuNhat1.dienTich()} / Chu vi hình chữ nhật là: ${hinhChuNhat1.chuVi()}`);
+    </script>
+</body>
+
+</html>

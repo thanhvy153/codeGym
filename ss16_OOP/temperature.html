@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Xây dựng lớp mô tả Temperature.</title>
+</head>
+
+<body>
+    <script>
+        class Temperature {
+            celsius; // Nhiệt độ theo độ C
+       
+
+        constructor(celsius){
+            this.celsius = celsius;
+        }
+        convertToFahrenheit(){
+            return (this.celsius * 9 / 5) + 32; // Chuyển đổi độ C sang độ F
+        }
+        convertToKelvin() {
+            return this.celsius + 273; // Chuyển đổi từ độ C sang Kelvin
+        }
+    }
+
+    let temp = new Temperature(25);
+    document.write(`Nhiệt độ ${temp.celsius} độ C tương đương với ${temp.convertToFahrenheit()} độ F và ${temp.convertToKelvin()} Kelvin.`);
+    
+    </script>
+</body>
+
+</html>
