@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tạo số lớn nhất từ 4 chữ số</title>
+</head>
+
+<body>
+    <script>
+        let number = prompt("Nhập số muốn kiểm tra:");
+
+        
+        function findMaxNumber(number) { 
+            if (number.length !== 4 || isNaN(number)) {
+                alert("Số phải là 4 chữ số");
+                return -1;
+            } 
+            let maxNumber = 0;
+            for (let i = 0; i < number.length; i++) {
+                let newArray = [];
+                for (let j = 0; j < number.length; j++) {
+                    if (i !== j) {
+                        newArray.push(parseInt(number[j]));
+                    }
+                }
+                let newNumber = 0;
+                for (let k = 0; k < newArray.length; k++) {
+                    newNumber = newNumber * 10 + newArray[k];
+                }
+
+                if (newNumber > maxNumber) {
+                    maxNumber = newNumber;
+                }
+            }
+            return maxNumber;
+        }
+        let result = findMaxNumber(number);
+        alert("Số lớn nhất có thể tạo từ 3 chữ số: " + result);
+    </script>
+</body>
+
+</html>

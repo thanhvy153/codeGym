@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mảng nguyên tố</title>
+</head>
+
+<body>
+    <script>
+        let number = + prompt("Nhập số ký tự muốn kiểm tra:");
+        let array = [];
+        while (number > 0) {
+            let input = + prompt("Nhập số thứ " + (array.length + 1) + ": ");
+            array.push(input);
+            number--;
+        }
+
+        function isPrime(num) {
+            if (num < 2) {
+                return false;
+            }
+
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        function checkArray(array) {
+            for (let i = 0; i < array.length; i++) {
+                if (!isPrime(array[i])) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        let result = checkArray(array);
+        if (result) {
+            document.write("Mảng chỉ chứa số nguyên tố.");
+        } else {
+            document.write("Mảng chứa ít nhất một số không phải là số nguyên tố.");
+        }
+    </script>
+</body>
+
+</html>

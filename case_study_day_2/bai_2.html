@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiểm tra phân số</title>
+</head>
+
+<body>
+    <script>
+        let number = prompt("Nhập số phân số muốn kiểm tra:");
+        if (!number.includes('/')) {
+            alert("Đây không phải là một phân số")
+        }
+
+        const tachPhanSo = number.split('/');
+
+        if (tachPhanSo.length != 2) {
+            alert("Đây không phải là một phân số")
+        }
+
+        const tuSo = + tachPhanSo[0].trim();
+        const mauSo = + tachPhanSo[1].trim();
+        if (isNaN(tuSo) || isNaN(mauSo)) {
+            alert("Đây không phải là một phân số hợp lệ");
+        } else if (mauSo == 0) {
+            alert("Mẫu số không thể bằng 0");
+        } else {
+            let a = tuSo;
+            let b = mauSo;
+            let uocSoChung = 1;
+            // Chuyển đổi sang số dương nếu là số âm
+            if (a < 0) a = -a;
+            if (b < 0) b = -b;
+            // Đảm bảo a là số lớn hơn = b
+            if (b >= a) {
+                let temp = a;
+                a = b;
+                b = temp;
+            }
+            if (a % b == 0) {
+                uocSoChung = b;
+            } else {
+                // Tìm số lớn nhất chia hết cho a
+                let a1 = 1;
+                for (let i = 1; i < a; i++) {
+                    if (a % i == 0) {
+                        a1 = i;
+                    }
+                }
+                // Tìm số lớn nhất chia hết cho b
+                let b1 = 1;
+                for (let i = 1; i < b; i++) {
+                    if (b % i == 0) {
+                        b1 = i;
+                    }
+                }
+                if (a1 == b1) {
+                    uocSoChung = a1;
+                } else {
+                    uocSoChung = 1;
+                }
+            }
+            let tuSoRutGon = tuSo / uocSoChung;
+            let mauSoRutGon = mauSo / uocSoChung;
+            document.write("Phân số đã rút gọn là: " + tuSoRutGon + "/" + mauSoRutGon);
+        }
+    </script>
+</body>
+
+</html>

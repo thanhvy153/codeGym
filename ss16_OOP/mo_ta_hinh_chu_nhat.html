@@ -15,7 +15,6 @@
                 this.length = chieuDai;
                 this.width = chieuRong;
             }
-
             dienTich() {
                 return this.length * this.width;
             }
@@ -26,8 +25,14 @@
                 this.length = chieuDai;
                 this.width = chieuRong;
             }
+            getChieuDai(chieuDai) {
+                return this.length;
+            }
+            getChieuRong(chieuRong) {
+                return this.width;
+            }
         }
-        
+
         let hinhChuNhat1 = new Rectangle(5, 10);
         // Diện tích hình chữ nhật sau khi set
         hinhChuNhat1.setChieuDaiVaChieuRong(7, 12);

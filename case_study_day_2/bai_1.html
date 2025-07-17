@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mảng nguyên tố</title>
+</head>
+
+<body>
+    <script>
+        let number = + prompt("Nhập số ký tự muốn kiểm tra:");
+        let array = [];
+        while (number > 0) {
+            let input = + prompt("Nhập số thứ " + (array.length + 1) + ": ");
+            array.push(input);
+            number--;
+        }
+
+        function checkArray(array) {
+            let oGiua;
+            if (array.length % 2 == 0) {
+                oGiua = array.length / 2;
+            } else {
+                oGiua  = Math.floor(array.length / 2);
+            }
+
+            for (let i = 0; i < oGiua; i++) {
+                if (array[i] !== array[array.length - 1 - i]) {
+                    return false;
+                }
+            }
+            return true;
+        }
+        let result = checkArray(array);
+        if (result) {
+            document.write("OK, mảng là đối xứng.");
+        } else {
+            document.write("NO, mảng không phải là đối xứng.");
+        }
+    </script>
+</body>
+
+</html>

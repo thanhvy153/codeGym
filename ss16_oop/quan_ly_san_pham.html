@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quản lý sản phẩm.</title>
+</head>
+
+<body>
+    <div class="container"> 
+        <h2>Product Mangager</h2>
+        <input id="id" placeholder="Enter id">
+        <input id="name" placeholder="Enter name">
+        <input id="price" placeholder="Enter price">
+        <button onclick="" >Add new product</button>
+        <p id="display"></p>
+        <p id="quantity"></p>
+    </div>
+  <script>
+    class Product {
+        constructor(id, name, price) {
+            this.id = id;
+            this.name = name;
+            this.price = price;
+        }
+    }
+
+    let product1  = new Product(1, "Samsung", 100);
+    let product2  = new Product(2, "iPhone", 200);
+    let product3  = new Product(3, "Nokia", 300);
+    let productList = [product1, product2, product3];
+
+    showList(productList);
+
+    function addNewProduct() {
+        let id = document.querySelector("#id").value;
+        let name = document.querySelector("#name").value;   
+        let price = document.querySelector("#price").value; 
+        let newProduct = new Product(id, name, price);
+        productList.push(newProduct);
+        document.querySelector("#id").value = "";
+        document.querySelector("#name").value = "";
+        document.querySelector("#price").value = "";
+        showList(productList);
+    }
+
+    function showList(list) {
+        let tableString = `<table border="1" style="border-collapse: collapse">
+                            <tr>
+                                <th>No</th>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Price</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>`;
+        for (let i = 0; i < list.length; i++) {
+            tableString += `<tr>
+                                <td>${i+1}</td>
+                                <td>${list[i].id}</td>
+                                <td>${list[i].name}</td>
+                                <td>${list[i].price}</td>       
+                                <td onclick="editProduct(${i})">Edit</td>
+                                <td onclick="deleteProduct(${i})">Delete</td>
+                            </tr>`;
+        }
+        tableString += `</table>`;
+        document.querySelector('#display').innerHTML = tableString;
+        document.querySelector('#quantity').innerText = `Total products: ${list.length}`;
+    }
+    function editProduct(index){
+        let updateProduct = prompt("Nhập tên mới", productList[index].name, productList[index].price, productList[index].id);
+    }
+
+    function deleteProduct() {
+
+    }
+  </script>
+</body>
+
+</html>
