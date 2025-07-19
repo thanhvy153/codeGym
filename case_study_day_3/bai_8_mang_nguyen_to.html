@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mảng ký tự</title>
+</head>
+
+<body>
+    <script>
+        let n;
+        do {
+            n = +prompt("Nhập số phần tử:");
+        } while (n <= 0 || n >= 20 || n % 1 != 0);
+
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array.push(prompt("Nhập phần tử thứ: " + (i + 1)));
+        }
+        alert(array);
+
+        result = checkArray(array);
+        alert(result);
+
+        function checkArray(array) {
+
+            for (let i = 0; i < array.length; i++) {
+                if (checkPrime(+array[i])) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        function checkPrime(number) {
+            if (number < 2) {
+                return false;
+            }
+            for (let i = 2; i < number; i++) {
+                if (number % i == 0) {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+    </script>
+</body>
+
+</html>

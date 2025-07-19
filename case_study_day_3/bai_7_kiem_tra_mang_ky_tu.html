@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mảng ký tự</title>
+</head>
+
+<body>
+    <script>
+        let n;
+        do {
+            n = +prompt("Nhập số phần tử:");
+        } while (n <= 0 || n >= 20 || n % 1 != 0);
+
+        let array = [];
+        for (let i = 0; i < n; i++) {
+            array.push(prompt("Nhập phần tử thứ: " + (i + 1)));
+        }
+        alert(array);
+
+        result = checkArray(array);
+        alert(result);
+        function checkArray(array) {
+            let number = false;
+            let charactor = false;
+            for (let i = 0; i < array.length; i++) {
+                if (isNaN(array[i])) {
+                    charactor = true;
+                } else {
+                    number = true;
+                }
+            }
+            if (charactor && number) {
+                return -1; // Mảng chứa số và ký tự
+            } else if (charactor) {
+                return 0; // Mảng chỉ bao gồm ký tự
+            } else {
+                return 1; // Mảng chỉ bao gồm số 
+            }
+        }
+    </script>
+</body>
+
+</html>

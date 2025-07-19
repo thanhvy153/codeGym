@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Mảng chẳng và lẻ</title>
+</head>
+
+<body>
+    <script>
+        let n;
+        do {
+            n = +prompt("Nhập số phần tử:");
+        } while (n <= 0 || n > 20 || n % 1 != 0);
+
+        let array = [];
+        for (let i = 0; i <n; i++) {
+            array.push(+prompt("Nhập phần tử thứ " + (i + 1) + ":"));
+        }
+        alert(array); // Hiển thị mảng đã nhập
+        let result = checkArray(array);
+        alert(result);
+        function checkArray(array) {
+            let oddNumber = false; // tạo biến theo dõi số lẻ
+            let evenNumber = false; // tạo biến theo dõi số chẵn
+            for (let i = 0; i < array.length; i++) {
+                if (array[i] % 2 == 0) {
+                    evenNumber = true;
+                } else {
+                    oddNumber = true;
+                }
+            }
+            if (evenNumber && oddNumber) {
+                return -1;
+            } else if (evenNumber) {
+                return 1;
+            } else if (oddNumber) {
+                return 0;
+            }
+        }
+    </script>
+</body>
+
+</html>
