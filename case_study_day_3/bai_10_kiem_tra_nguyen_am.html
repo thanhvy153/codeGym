@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiểm tra nguyên âm</title>
+</head>
+
+<body>
+    <script>
+        let sentence = prompt("Nhập một câu:");
+       
+
+        alert(checkVowels(sentence));
+
+        function checkVowels(sentence) {
+            let vowels = "aeiou";
+            let array = [];
+            for (let i = 0; i < sentence.length; i++) {
+                for (let j = 0; j < vowels.length; j++) {
+                    if (sentence[i].toLowerCase() === vowels[j] && !array.includes(sentence[i].toLowerCase())) {
+                        array.push(sentence[i].toLowerCase());
+                    }
+                }
+            }
+            return array;
+        }
+    </script>
+</body>
+
+</html>

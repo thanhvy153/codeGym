@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Kiểm tra 3 cạnh của tam giác</title>
+</head>
+
+<body>
+    <script>
+        let canh_a = +prompt("Nhập cạnh a:");
+        let canh_b = +prompt("Nhập cạnh b:");
+        let canh_c = +prompt("Nhập cạnh c:");
+
+        alert(checkTriangle(canh_a, canh_b, canh_c));
+        function checkTriangle(canh_a, canh_b, canh_c) {
+            if (canh_a <= 0 || canh_b <= 0 || canh_c <= 0) {
+                return "Không phải là 3 cạnh của một tam giác";
+            }
+            // Kiểm tra điều kiện tam giác
+            if (canh_a + canh_b > canh_c && canh_a + canh_c > canh_b && canh_b + canh_c > canh_a) {
+                if (canh_a * canh_a + canh_b * canh_b == canh_c * canh_c ||
+                    canh_a * canh_a + canh_c * canh_c == canh_b * canh_b ||
+                    canh_b * canh_b + canh_c * canh_c == canh_a * canh_a) {
+                    return "Đây là 3 cạnh của một tam giác vuông";
+                }
+                return "Đây là 3 cạnh của một tam giác";
+            } else {
+                return "Không phải là 3 cạnh của một tam giác";
+            }
+        }
+    </script>
+</body>
+
+</html>
