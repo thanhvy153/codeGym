@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hàm thực hiện tạo ra một cụm từ viết tắt</title>
+</head>
+
+<body>
+    <script>
+        let input = [1,5,6,11,9,20,8,0,8,1];
+        let result = checkArray(input);
+        console.log(result);
+        // alert(JSON.stringify(result));
+
+        function checkArray(array) {
+            let resultArray = [];
+
+            for (let i = 0; i < array.length - 2; i++) {
+                if (array[i] + array[i+1] == array[i + 2]) {
+                    resultArray.push([array[i], array[i+1]]);
+                }
+            }
+            return resultArray;
+        }
+       
+    </script>
+</body>
+
+</html>

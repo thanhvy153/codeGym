@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Tạo một lớp Danh bạ điện</title>
+</head>
+
+<body>
+    <h1>Danh Bạ Điện Thoại</h1>
+    <input type="text" id="soDienThoai" placeholder="Số Điện Thoại">
+    <input type="text" id="ten" placeholder="Tên">
+    <input type="text" id="diaChi" placeholder="Địa Chỉ">
+    <button type="submit" onclick="addContact()">Thêm</button>
+    <p id="display"></p>
+    <script>
+        class DanhBa {
+            soDienThoai;
+            ten;
+            diaChi;
+
+            constructor(soDienThoai, ten, diaChi) {
+                this.soDienThoai = soDienThoai;
+                this.ten = ten;
+                this.diaChi = diaChi;
+            }
+        }
+        let danhSach1 = new DanhBa("0123456789", "Nguyen Van A", "Ha Noi");
+        let danhSach2 = new DanhBa("0987654321", "Tran Thi B", "Ho Chi Minh");
+        let danhSach3 = new DanhBa("1234567890", "Le Van C", "Da Nang");
+
+        let danhSachDanhBa = [danhSach1, danhSach2, danhSach3];
+        showList(danhSachDanhBa);
+
+
+        function showList(danhSach) {
+            // hiển thị danh sách danh bạ => table
+            let tableString = `<table border="1" style="border-collapse: collapse; auto-width: 100%;">
+                <tr>
+                    <th>Số Điện Thoại</th>
+                    <th>Tên</th>
+                    <th>Địa Chỉ</th>
+                </tr>`;
+
+                for (let i = 0; i < danhSach.length; i++) {
+                    tableString += `<tr>
+                        <td>${danhSach[i].soDienThoai}</td>
+                        <td>${danhSach[i].ten}</td>
+                        <td>${danhSach[i].diaChi}</td>
+                        <td><button onclick="deleteContact(${i})">Xoá</button></td>
+                    </tr>`
+                }
+                tableString += `</table>`;
+            // hiển thị lên giao diện
+                document.querySelector("#display").innerHTML = tableString;
+        }
+        function addContact() {
+            let soDienThoai = document.querySelector("#soDienThoai").value;
+            let ten = document.querySelector("#ten").value;
+            let diaChi = document.querySelector("#diaChi").value;
+            if (soDienThoai === "" || ten === "" || diaChi === "") {
+                alert("Vui lòng nhập đầy đủ thông tin!");
+                return;
+            }
+            let newContact = new DanhBa(soDienThoai, ten, diaChi);
+            danhSachDanhBa.push(newContact);
+            document.querySelector("#soDienThoai").value = "";
+            document.querySelector("#ten").value = "";  
+            document.querySelector("#diaChi").value = "";
+            showList(danhSachDanhBa);
+        }
+        
+        function deleteContact(index) {
+            let conf = confirm(`Bạn có muốn xoá liên hệ ${danhSachDanhBa[index].soDienThoai} này không?`);
+            if (conf) {
+                danhSachDanhBa.splice(index,1)       
+            }
+            showList(danhSachDanhBa);
+        }
+    </script>
+</body>
+
+</html>

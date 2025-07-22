@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hàm thực hiện tìm ra các cặp phần tử liền kề có tổng bằng phần tử tiếp theo.</title>
+</head>
+
+<body>
+    <script>
+        let sentence = prompt("Nhập một câu:");
+        alert(sentence);
+        result = checkArray(sentence);
+        alert(result);
+
+        function checkArray(sentence) {
+            let arraySentence = sentence.split(" "); // tách từng từ đưa vào mảng
+
+            let capitalize = "";
+            if (arraySentence.length == 1) {
+                return "chuỗi này chỉ được tính chỉ có 1 từ";
+            }
+            for (let i = 0; i < arraySentence.length; i++) {
+                let word = arraySentence[i][0].toUpperCase(); // chạy từng phần tử của mảng arraySentence sau đó ghi hoa chữ cái đầu
+                capitalize += word;
+            }
+            return capitalize;
+        }
+    </script>
+</body>
+
+</html>
