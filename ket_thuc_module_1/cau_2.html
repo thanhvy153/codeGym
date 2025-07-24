@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Chuỗi Ký Tự</title>
+</head>
+
+<body>
+    <script>
+        let chuoiKyTu = prompt("Nhập một chuỗi ký tự bất kỳ: ");
+
+        let ketQua = kiemTra(chuoiKyTu);
+        alert(ketQua);
+
+        function kiemTra(kyTu) {
+            let chuoiVietHoa = kyTu.toUpperCase();
+            let vietHoa = 0;
+
+            for (let i = 0; i < kyTu.length; i++) {
+                if (kyTu[i] === chuoiVietHoa[i]) {
+                    vietHoa++
+                }
+            }
+            return vietHoa; // Số từ viết hoa 
+        }
+    </script>
+</body>
+
+</html>

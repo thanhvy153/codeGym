@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quản lý sản phẩm.</title>
+</head>
+
+<body>
+    <div>
+        <h2>Quản lý sản phẩm</h2>
+        <input type="text" id="model" placeholder="Nhập model">
+        <input type="text" id="name" placeholder="Nhập tên sản phẩm">
+        <input type="text" id="provider" placeholder="Nhà sản xuất">
+        <input type="text" id="price" placeholder="Nhập giá">
+        <button type="submit" onclick="addProduct()" id="addProduct">Add new product</button>
+        <p id="soLuong"></p>
+        <p id="display"></p>
+    </div>
+    <script>
+        class Product {
+            model;
+            name;
+            provider;
+            price;
+            constructor(model, name, provider, price ) {
+                this.model = model;
+                this.name = name;
+                this.provider = provider;
+                this.price = price;
+            }
+            setModel(model) {
+                this.model = model;
+            }
+
+            setName(name) {
+                this.name = name;
+            }
+
+            setProvider(provider) {
+                this.provider = provider;
+            }
+
+            setPrice(price) {
+                this.price = price;
+            }
+
+            getModel(model) {
+                return this.model;
+            }
+            getName(name) {
+                return this.name;
+            }
+            getProvider(provider) {
+                return this.provider;
+            }
+            getPrice(price) {
+                return this.price;
+            }
+        }
+
+        let product1 = new Product("E1", "Samsung E100", "Samsung", 1000);
+        let product2 = new Product('T2', "iPhone 15 Promax", "Apple", 1200);
+        let product3 = new Product('C3', "Nokia RT78", "Nokia", 500);
+        let productList = [product1, product2, product3];
+
+        showList(productList);
+
+
+        function showList(productList) {
+            let tableString = `<table border="1" style="border-collapse: collapse;">
+                <tr>
+                    <th>Mã sản phẩm</th>
+                    <th>Tên</th>
+                    <th>Hãng sản xuất</th>
+                    <th>Giá</th>
+                </tr>`
+
+            for (let i = 0; i < productList.length; i++) {
+                tableString += `<tr>
+                                        <td>${productList[i].getModel()}</td>
+                                        <td>${productList[i].getName()}</td>
+                                        <td>${productList[i].getPrice()}</td>
+                                        <td>${productList[i].getProvider()}</td>
+                                    </tr>`
+            }
+            tableString += '</table>'
+            document.querySelector("#display").innerHTML = tableString;
+            document.querySelector("#soLuong").innerHTML = "Số lượng: " + productList.length;
+        }
+        function addProduct() {
+            let model = document.querySelector("#model").value;
+            let name = document.querySelector("#name").value;
+            let provider = document.querySelector("#provider").value;
+            let price = document.querySelector("#price").value;
+
+            let newProduct = new Product(model, name, provider, price);
+            productList.push(newProduct);
+            
+            document.querySelector("#model").value = "";
+            document.querySelector("#name").value = "";
+            document.querySelector("#provider").value = "";
+            document.querySelector("#price").value = "";
+            showList(productList);
+        }
+
+
+    </script>
+</body>
+
+</html>
